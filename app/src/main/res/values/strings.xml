@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">CalculatorApp</string>
+    <string name="fragment_main_title">Calculator</string>
+</resources>
