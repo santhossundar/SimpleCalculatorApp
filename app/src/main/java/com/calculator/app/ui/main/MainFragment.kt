@@ -51,6 +51,23 @@ class MainFragment : Fragment() {
             }
         }
 
+        var btnSubtract = view.findViewById<Button>(R.id.fragment_main_btn_subtract)
+        btnSubtract.setOnClickListener {
+            errorTxtView.visibility = View.GONE
+            val firstValue = edtFirstValue.text.toString()
+            val secondValue = edtSecondValue.text.toString()
+
+            if(viewModel.validateUserInputFields(firstValue, secondValue)){
+                viewModel.subtract(firstValue, secondValue)
+                resultTxtView.text = viewModel.result.value.toString()
+            }
+
+            viewModel.userInputFieldError.observe(viewLifecycleOwner) {error ->
+                errorTxtView.visibility = View.VISIBLE
+                errorTxtView.text = error
+            }
+        }
+
         return view
     }
 
