@@ -34,6 +34,23 @@ class MainFragment : Fragment() {
         var resultTxtView = view.findViewById<TextView>(R.id.fragment_main_result)
         var errorTxtView = view.findViewById<TextView>(R.id.fragment_main_error)
 
+        var btnAdd = view.findViewById<Button>(R.id.fragment_main_btn_add)
+        btnAdd.setOnClickListener {
+            errorTxtView.visibility = View.GONE
+            val firstValue = edtFirstValue.text.toString()
+            val secondValue = edtSecondValue.text.toString()
+
+            if(viewModel.validateUserInputFields(firstValue, secondValue)){
+                viewModel.add(firstValue, secondValue)
+                resultTxtView.text = viewModel.result.value.toString()
+            }
+
+            viewModel.userInputFieldError.observe(viewLifecycleOwner) {error ->
+                errorTxtView.visibility = View.VISIBLE
+                errorTxtView.text = error
+            }
+        }
+
         return view
     }
 
