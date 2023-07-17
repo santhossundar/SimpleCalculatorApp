@@ -29,4 +29,10 @@ class MainViewModel() : ViewModel() {
         val secondValue = valueTwo.toDouble()
         result.value = firstValue + secondValue
     }
+
+    fun subtract(valueOne: String, valueTwo: String) {
+        val firstValue = valueOne.toDouble()
+        val secondValue = valueTwo.toDouble()
+        result.value = firstValue - secondValue
+    }
 }
