@@ -28,6 +28,12 @@ class MainFragment : Fragment() {
         savedInstanceState: Bundle?
     ): View {
         var view = inflater.inflate(R.layout.fragment_main, container, false)
+
+        var edtFirstValue = view.findViewById<EditText>(R.id.fragment_main_edt_value_one)
+        var edtSecondValue = view.findViewById<EditText>(R.id.fragment_main_edt_value_two)
+        var resultTxtView = view.findViewById<TextView>(R.id.fragment_main_result)
+        var errorTxtView = view.findViewById<TextView>(R.id.fragment_main_error)
+
         return view
     }
 
