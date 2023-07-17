@@ -1,4 +1,10 @@
 <resources>
     <string name="app_name">CalculatorApp</string>
     <string name="fragment_main_title">Calculator</string>
+    <string name="fragment_main_edt_val_one">Enter the First Value</string>
+    <string name="fragment_main_edt_val_two">Enter the Second Value</string>
+    <string name="fragment_main_btn_add">+</string>
+    <string name="fragment_main_btn_subtract">-</string>
+    <string name="fragment_main_btn_multiply">x</string>
+    <string name="fragment_main_btn_divide">/</string>
 </resources>

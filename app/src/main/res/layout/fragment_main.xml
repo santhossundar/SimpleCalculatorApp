@@ -7,4 +7,122 @@
     android:layout_height="match_parent"
     tools:context=".ui.main.MainFragment">
 
+    <TextView
+        android:id="@+id/fragment_main_title"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="160dp"
+        android:text="@string/fragment_main_title"
+        android:textAlignment="center"
+        android:textColor="@color/black"
+        android:textSize="14pt" />
+
+    <EditText
+        android:id="@+id/fragment_main_edt_value_one"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/fragment_main_title"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/edt_background"
+        android:hint="@string/fragment_main_edt_val_one"
+        android:paddingLeft="20dp"
+        android:paddingEnd="20dp" />
+
+    <EditText
+        android:id="@+id/fragment_main_edt_value_two"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/fragment_main_edt_value_one"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/edt_background"
+        android:hint="@string/fragment_main_edt_val_two"
+        android:paddingLeft="20dp"
+        android:paddingEnd="20dp" />
+
+    <TextView
+        android:id="@+id/fragment_main_error"
+        android:layout_width="match_parent"
+        android:layout_height="25dp"
+        android:layout_below="@id/fragment_main_edt_value_two"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="15dp"
+        android:layout_marginEnd="40dp"
+        android:paddingLeft="20dp"
+        android:paddingEnd="20dp"
+        android:textColor="@color/red"
+        android:visibility="invisible"/>
+
+    <LinearLayout
+        android:id="@+id/fragment_main_operators"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/fragment_main_error"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="40dp"
+        android:orientation="horizontal">
+
+        <Button
+            android:id="@+id/fragment_main_btn_add"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:text="@string/fragment_main_btn_add"
+            android:textColor="@drawable/btn_text"
+            android:textSize="12pt" />
+
+        <Button
+            android:id="@+id/fragment_main_btn_subtract"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:text="@string/fragment_main_btn_subtract"
+            android:textColor="@drawable/btn_text"
+            android:textSize="12pt"/>
+
+        <Button
+            android:id="@+id/fragment_main_btn_multiply"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:text="@string/fragment_main_btn_multiply"
+            android:textColor="@drawable/btn_text"
+            android:textSize="12pt"/>
+
+        <Button
+            android:id="@+id/fragment_main_btn_divide"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="10dp"
+            android:layout_weight="1"
+            android:background="@drawable/btn_background"
+            android:text="@string/fragment_main_btn_divide"
+            android:textColor="@drawable/btn_text"
+            android:textSize="12pt"/>
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/fragment_main_result"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_below="@id/fragment_main_operators"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:background="@drawable/txtview_background"
+        android:gravity="center"
+        android:paddingLeft="20dp"
+        android:paddingEnd="20dp"
+        android:textAlignment="center"
+        android:textSize="12pt"/>
 </RelativeLayout>
