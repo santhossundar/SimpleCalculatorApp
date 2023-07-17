@@ -85,6 +85,28 @@ class MainFragment : Fragment() {
             }
         }
 
+        var btnDivide = view.findViewById<Button>(R.id.fragment_main_btn_divide)
+        btnDivide.setOnClickListener {
+            errorTxtView.visibility = View.GONE
+            val firstValue = edtFirstValue.text.toString()
+            val secondValue = edtSecondValue.text.toString()
+
+            if(viewModel.validateUserInputFields(firstValue, secondValue)){
+                viewModel.divide(firstValue, secondValue)
+                resultTxtView.text = viewModel.result.value.toString()
+            }
+
+            viewModel.userInputFieldError.observe(viewLifecycleOwner) {error ->
+                errorTxtView.visibility = View.VISIBLE
+                errorTxtView.text = error
+            }
+
+            viewModel.operationError.observe(viewLifecycleOwner) {error ->
+                errorTxtView.visibility = View.VISIBLE
+                errorTxtView.text = error
+            }
+        }
+
         return view
     }
 
