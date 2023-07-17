@@ -11,6 +11,9 @@ class MainViewModel() : ViewModel() {
     private val _userInputFieldError = MutableLiveData<String?>()
     val userInputFieldError: LiveData<String?> = _userInputFieldError
 
+    private val _operationError = MutableLiveData<String?>()
+    val operationError: LiveData<String?> = _operationError
+
     fun validateUserInputFields(firstValue: String, secondValue: String): Boolean {
         if (firstValue.isBlank() || secondValue.isBlank()) {
             _userInputFieldError.value = "Input fields cannot be blank!"
@@ -40,5 +43,18 @@ class MainViewModel() : ViewModel() {
         val firstValue = valueOne.toDouble()
         val secondValue = valueTwo.toDouble()
         result.value = firstValue * secondValue
+    }
+
+    fun divide(valueOne: String, valueTwo: String) {
+        val firstValue = valueOne.toDouble()
+        val secondValue = valueTwo.toDouble()
+
+        val dividedValue = firstValue / secondValue
+
+        if(dividedValue.isFinite()){
+            result.value = dividedValue
+        } else {
+            _operationError.value = "Cannot divide by zero!"
+        }
     }
 }
